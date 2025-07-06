@@ -15,7 +15,7 @@ frame.BorderSizePixel = 0
 
 local button = Instance.new("TextButton", frame)
 button.Size = UDim2.new(1, 0, 1, 0)
-button.Text = "reset.v2"
+button.Text = "reset(v2)"
 button.TextColor3 = Color3.fromRGB(255, 255, 255)
 button.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 button.Font = Enum.Font.SourceSansBold
@@ -61,6 +61,8 @@ end
 -- Button Press Action
 button.MouseButton1Click:Connect(function()
 	task.spawn(function()
+		pressKeySmooth(Enum.KeyCode.R)
+		pressKeySmooth(Enum.KeyCode.Space)
 		pressKeySmooth(Enum.KeyCode.Escape)
 		pressKeySmooth(Enum.KeyCode.R)
 		pressKeySmooth(Enum.KeyCode.Return)
