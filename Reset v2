@@ -15,7 +15,7 @@ frame.BorderSizePixel = 0
 
 local button = Instance.new("TextButton", frame)
 button.Size = UDim2.new(1, 0, 1, 0)
-button.Text = "JALI MADE"
+button.Text = "reset.v2"
 button.TextColor3 = Color3.fromRGB(255, 255, 255)
 button.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 button.Font = Enum.Font.SourceSansBold
@@ -51,19 +51,20 @@ frame.InputChanged:Connect(function(input)
 	end
 end)
 
--- Ultra Fast Key Press Function
-local function pressKeyQuick(keyCode)
+-- Balanced Speed Key Press Function
+local function pressKeySmooth(keyCode)
 	VirtualInputManager:SendKeyEvent(true, keyCode, false, game)
+	task.wait(0.015) -- Fast but stable
 	VirtualInputManager:SendKeyEvent(false, keyCode, false, game)
 end
 
--- Button Press Action (ultra fast combo)
+-- Button Press Action
 button.MouseButton1Click:Connect(function()
 	task.spawn(function()
-		pressKeyQuick(Enum.KeyCode.R)
-		pressKeyQuick(Enum.KeyCode.Space)
-		pressKeyQuick(Enum.KeyCode.Escape)
-		pressKeyQuick(Enum.KeyCode.R)
-		pressKeyQuick(Enum.KeyCode.Return)
+		pressKeySmooth(Enum.KeyCode.R)
+		pressKeySmooth(Enum.KeyCode.Space)
+		pressKeySmooth(Enum.KeyCode.Escape)
+		pressKeySmooth(Enum.KeyCode.R)
+		pressKeySmooth(Enum.KeyCode.Return)
 	end)
 end)
