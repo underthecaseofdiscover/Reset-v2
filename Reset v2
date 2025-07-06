@@ -51,20 +51,19 @@ frame.InputChanged:Connect(function(input)
 	end
 end)
 
--- Key Press Function
-local function pressKey(keyCode)
+-- Ultra Fast Key Press Function
+local function pressKeyQuick(keyCode)
 	VirtualInputManager:SendKeyEvent(true, keyCode, false, game)
-	task.wait(0.05)
 	VirtualInputManager:SendKeyEvent(false, keyCode, false, game)
 end
 
--- Button Press Action
+-- Button Press Action (ultra fast combo)
 button.MouseButton1Click:Connect(function()
 	task.spawn(function()
-		pressKey(Enum.KeyCode.R)
-		pressKey(Enum.KeyCode.Space)
-		pressKey(Enum.KeyCode.Escape)
-		pressKey(Enum.KeyCode.R)
-		pressKey(Enum.KeyCode.Return)
+		pressKeyQuick(Enum.KeyCode.R)
+		pressKeyQuick(Enum.KeyCode.Space)
+		pressKeyQuick(Enum.KeyCode.Escape)
+		pressKeyQuick(Enum.KeyCode.R)
+		pressKeyQuick(Enum.KeyCode.Return)
 	end)
 end)
