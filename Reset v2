@@ -61,8 +61,6 @@ end
 -- Button Press Action
 button.MouseButton1Click:Connect(function()
 	task.spawn(function()
-		pressKeySmooth(Enum.KeyCode.R)
-		pressKeySmooth(Enum.KeyCode.Space)
 		pressKeySmooth(Enum.KeyCode.Escape)
 		pressKeySmooth(Enum.KeyCode.R)
 		pressKeySmooth(Enum.KeyCode.Return)
